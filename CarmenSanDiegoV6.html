@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detective Mundial 🕵️</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-yellow-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center p-4">
-
   <div class="max-w-3xl w-full bg-white p-6 rounded-xl shadow-xl space-y-6" id="app">
     <div class="flex justify-between items-center">
       <h1 class="text-2xl font-bold text-purple-700">🕵️ Detective Mundial</h1>
       <button onclick="toggleSound()" id="soundBtn" class="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded text-gray-800">🔊 Sonido: Activado</button>
     </div>
-
     <div id="game" class="text-center space-y-4">
       <p class="text-gray-700">Haz clic para comenzar la investigación.</p>
       <button onclick="startGame()" id="startBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded">Comenzar Juego</button>
@@ -26,7 +24,6 @@
 
   <script>
     const detectiveImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Private_detective_icon.png/240px-Private_detective_icon.png";
-
     const phrases = [
       "Hmm… ¡Esto se pone interesante!",
       "Esta pista me huele a trampa…",
@@ -40,9 +37,9 @@
       {
         city: "París",
         clues: [
-          "En esta ciudad se encuentra una de las pinturas más famosas del mundo, protegida por vidrio.",
-          "Su torre metálica fue originalmente criticada, ahora es un ícono mundial.",
-          "El río Sena la atraviesa y el Museo del Louvre es su principal atractivo."
+          "Es hogar del museo más visitado del mundo y una pintura robada en 1911.",
+          "Tiene un monumento de hierro que inicialmente fue odiado por los locales.",
+          "Una torre aquí se ilumina por la noche y fue clave en la Exposición Universal de 1889."
         ],
         options: ["Madrid", "París", "Roma"],
         correct: "París"
@@ -50,92 +47,22 @@
       {
         city: "Tokio",
         clues: [
-          "Es una ciudad donde los templos tradicionales se mezclan con edificios futuristas.",
-          "El cruce peatonal más transitado del mundo se encuentra en su centro.",
-          "Su cocina es famosa, desde sushi hasta ramen, y la cultura del té es muy fuerte."
+          "En una zona de esta ciudad verás peatones cruzar en todas las direcciones a la vez.",
+          "Aquí se encuentra el cruce más transitado del mundo, y también un templo con una linterna gigante roja.",
+          "Es la capital de un país que combina samuráis, sushi y tecnología de punta."
         ],
-        options: ["Seúl", "Pekín", "Tokio"],
+        options: ["Tokio", "Seúl", "Osaka"],
         correct: "Tokio"
       },
       {
         city: "Río de Janeiro",
         clues: [
-          "Una figura de brazos abiertos vigila desde lo alto, conocida mundialmente.",
-          "El carnaval más famoso del mundo inunda sus calles con música y baile.",
-          "En la costa, puedes encontrar playas icónicas como Copacabana y el Pan de Azúcar."
+          "Una gigantesca estatua de brazos abiertos domina esta ciudad desde una montaña.",
+          "Se celebra aquí un carnaval considerado el más grande del mundo.",
+          "Una montaña llamada Pan de Azúcar ofrece vistas espectaculares al mar y la ciudad."
         ],
-        options: ["Buenos Aires", "Río de Janeiro", "Lima"],
+        options: ["Río de Janeiro", "Bogotá", "Buenos Aires"],
         correct: "Río de Janeiro"
-      },
-      {
-        city: "El Cairo",
-        clues: [
-          "La pirámide más grande del mundo se encuentra en esta ciudad, rodeada de misterio.",
-          "El río Nilo atraviesa la ciudad, una de las civilizaciones más antiguas surgió aquí.",
-          "En esta ciudad también se encuentra un museo con reliquias de faraones egipcios."
-        ],
-        options: ["Atenas", "El Cairo", "Estambul"],
-        correct: "El Cairo"
-      },
-      {
-        city: "Londres",
-        clues: [
-          "El famoso Big Ben está en esta ciudad, aunque su nombre oficial es Elizabeth Tower.",
-          "La reina reside en el Palacio de Buckingham, rodeado de parques hermosos.",
-          "La Torre de Londres, que alberga las joyas de la corona, se encuentra aquí."
-        ],
-        options: ["Londres", "Dublín", "Edimburgo"],
-        correct: "Londres"
-      },
-      {
-        city: "Ciudad de México",
-        clues: [
-          "Antes fue Tenochtitlán, una antigua ciudad azteca que ha dejado huella en la historia.",
-          "El Ángel de la Independencia y el Zócalo son dos de sus lugares más emblemáticos.",
-          "La ciudad se encuentra sobre un antiguo lago, y su historia se puede ver en muchos museos."
-        ],
-        options: ["Lima", "Bogotá", "Ciudad de México"],
-        correct: "Ciudad de México"
-      },
-      {
-        city: "Roma",
-        clues: [
-          "La ciudad es conocida como 'La Ciudad Eterna' y tiene una historia de miles de años.",
-          "El Coliseo es uno de sus monumentos más emblemáticos, testigo de la antigua Roma.",
-          "El Vaticano, el centro del catolicismo, está enclavado en medio de la ciudad."
-        ],
-        options: ["Venecia", "Roma", "Milán"],
-        correct: "Roma"
-      },
-      {
-        city: "Estambul",
-        clues: [
-          "Esta ciudad fue la capital de tres grandes imperios: el Romano, el Bizantino y el Otomano.",
-          "La Mezquita Azul es uno de sus puntos más visitados, con su arquitectura impresionante.",
-          "Se encuentra a caballo entre dos continentes, Asia y Europa, a través del estrecho del Bósforo."
-        ],
-        options: ["Atenas", "Estambul", "Cairo"],
-        correct: "Estambul"
-      },
-      {
-        city: "Venecia",
-        clues: [
-          "Famosa por sus canales y góndolas, esta ciudad se construyó sobre el agua.",
-          "La Plaza de San Marcos es uno de sus principales puntos turísticos.",
-          "La arquitectura medieval y los puentes de piedra la hacen única."
-        ],
-        options: ["Florencia", "Venecia", "Roma"],
-        correct: "Venecia"
-      },
-      {
-        city: "Moscú",
-        clues: [
-          "La Plaza Roja, con la famosa Catedral de San Basilio, es uno de sus puntos más destacados.",
-          "Esta ciudad es el centro político y cultural de Rusia, con una historia marcada por el comunismo.",
-          "El Kremlin, con sus murallas rojas, es una de las fortalezas más antiguas de Europa."
-        ],
-        options: ["Moscú", "San Petersburgo", "Kiev"],
-        correct: "Moscú"
       }
     ];
 
@@ -147,7 +74,7 @@
       currentLevel = 0;
       score = 0;
       showLevel();
-      document.getElementById("startBtn").style.display = "none"; // Ocultar el botón de comenzar después de hacer clic
+      document.getElementById("startBtn").style.display = "none";
     }
 
     function toggleSound() {
@@ -157,13 +84,13 @@
 
     function showLevel() {
       const level = levels[currentLevel];
-      const detectivePhrase = phrases[Math.floor(Math.random() * phrases.length)];
+      const phrase = phrases[Math.floor(Math.random() * phrases.length)];
       const game = document.getElementById("game");
 
       game.innerHTML = `
         <div class="flex items-center gap-4 text-left">
           <img src="${detectiveImg}" alt="Detective" class="w-20 h-20">
-          <p class="text-purple-700 font-semibold text-lg italic">"${detectivePhrase}"</p>
+          <p class="text-purple-700 font-semibold text-lg italic">"${phrase}"</p>
         </div>
         <h2 class="text-xl font-bold text-purple-600 mt-2">🕵️ Robo en curso...</h2>
         <ul class="text-left list-disc list-inside mt-2 text-gray-800">
@@ -224,6 +151,5 @@
       `;
     }
   </script>
-
 </body>
 </html>
